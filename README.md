@@ -1,16 +1,28 @@
-## Hi there 👋
+# 🛡️ Security Researcher & Tool Builder
 
-<!--
-**shivanshsahajpal22-dev/shivanshsahajpal22-dev** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+I am a **Cybersecurity Researcher** focused on the intersection of **Web Security**, **Cloud Infrastructure**, and **Offensive Automation**. I bridge the gap between low-level performance and high-level reconnaissance.
 
-Here are some ideas to get you started:
+### 🚀 The Weekly Drop
+I release a new security tool, exploit script, or research project **every single week**. Check my pinned repositories for the latest release.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+---
+
+### 🛠️ Technical Arsenal
+
+* **Languages:** * **Go** (High-concurrency networking & fast recon tools)
+    * **C** (Low-level exploitation & systems programming)
+    * **Python** (Rapid prototyping & automation)
+* **Focus Areas:**
+    * 🎯 **Bug Bounty:** Advanced reconnaissance and vulnerability discovery.
+    * ☁️ **Cloud Security:** Identifying misconfigurations and IAM pivots.
+    * 🌐 **Web Hacking:** Deep-dive analysis of modern web architectures.
+* **Environment:** Kali Linux | Kali NetHunter | Custom Go Binaries
+
+---
+
+### 🤝 Let's Connect
+* **Freelancing:** I am open to custom security tool development and security consulting.
+* **Collaboration:** If you're working on a Go-based security project or a unique recon methodology, let's talk.
+* **Updates:** Watch my repositories for the weekly tool release.
+
+> "Discipline is the only path to mastery." — *Inspired by Miyamoto Musashi*
