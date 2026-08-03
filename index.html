@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>root@offsec:~$</title>
+<style>
+  :root{
+    --bg: #0c0b09;
+    --surface: #16140f;
+    --amber: #ffb300;
+    --amber-dim: #8a6a1f;
+    --text: #e9e2cf;
+    --text-dim: #8a8474;
+    --red: #ff5c4d;
+    --mono: 'IBM Plex Mono', 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html,body{
+    margin:0; padding:0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--mono);
+    min-height: 100vh;
+  }
+
+  body{
+    background-image:
+      radial-gradient(ellipse at top left, rgba(255,179,0,0.05), transparent 55%),
+      repeating-linear-gradient(0deg, rgba(255,255,255,0.012) 0px, rgba(255,255,255,0.012) 1px, transparent 1px, transparent 3px);
+  }
+
+  ::selection{ background: var(--amber); color: #0c0b09; }
+
+  a{ color: inherit; text-decoration: none; }
+
+  .wrap{
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 64px 24px 100px;
+  }
+
+  /* ---- Boot sequence ---- */
+  .boot{
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.8;
+    margin-bottom: 36px;
+  }
+  .boot span{ display:block; opacity:0; animation: fadeIn 0.4s forwards; }
+  .boot span:nth-child(1){ animation-delay: 0.05s; }
+  .boot span:nth-child(2){ animation-delay: 0.25s; }
+  .boot span:nth-child(3){ animation-delay: 0.45s; }
+  .boot span:nth-child(4){ animation-delay: 0.65s; }
+  .boot .ok{ color: var(--amber); }
+
+  @keyframes fadeIn{ to{ opacity:1; } }
+
+  /* ---- Prompt / hero ---- */
+  .prompt-line{
+    font-size: 15px;
+    color: var(--amber-dim);
+    margin-bottom: 4px;
+  }
+  .prompt-line .user{ color: var(--amber); }
+
+  h1{
+    font-size: clamp(28px, 5vw, 44px);
+    line-height: 1.15;
+    margin: 6px 0 18px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  h1 .cursor{
+    display:inline-block;
+    width: 0.5em; height: 0.85em;
+    background: var(--amber);
+    margin-left: 6px;
+    animation: blink 1s steps(1) infinite;
+    vertical-align: -0.1em;
+  }
+  @keyframes blink{ 50%{ opacity:0; } }
+
+  .bio{
+    color: var(--text-dim);
+    font-size: 14.5px;
+    line-height: 1.8;
+    max-width: 620px;
+    margin-bottom: 8px;
+  }
+  .bio strong{ color: var(--text); font-weight: 600; }
+
+  .tags{
+    display:flex; flex-wrap:wrap; gap: 8px;
+    margin: 22px 0 56px;
+  }
+  .tag{
+    font-size: 11.5px;
+    color: var(--amber);
+    border: 1px solid var(--amber-dim);
+    padding: 4px 10px;
+    border-radius: 3px;
+    letter-spacing: 0.02em;
+  }
+
+  /* ---- Directory listing ---- */
+  .section-label{
+    font-size: 12px;
+    color: var(--text-dim);
+    letter-spacing: 0.05em;
+    margin-bottom: 14px;
+    border-bottom: 1px solid #262319;
+    padding-bottom: 10px;
+  }
+  .section-label .cmd{ color: var(--amber); }
+
+  .listing{
+    border: 1px solid #262319;
+    border-radius: 4px;
+    overflow: hidden;
+    background: var(--surface);
+  }
+
+  .repo-row{
+    display: grid;
+    grid-template-columns: 90px 1fr auto;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 18px;
+    border-bottom: 1px solid #201d16;
+    transition: background 0.15s ease, padding-left 0.15s ease;
+    opacity: 0;
+    animation: rowIn 0.4s forwards;
+  }
+  .repo-row:last-child{ border-bottom: none; }
+  .repo-row:hover{
+    background: rgba(255,179,0,0.04);
+    padding-left: 24px;
+  }
+  .repo-row:hover .repo-name{ color: var(--amber); }
+  .repo-row:hover .arrow{ opacity: 1; transform: translateX(0); }
+
+  @keyframes rowIn{ from{ opacity:0; transform: translateY(6px);} to{ opacity:1; transform: translateY(0);} }
+
+  .perm{
+    font-size: 12px;
+    color: var(--text-dim);
+    letter-spacing: 0.02em;
+  }
+  .perm .set{ color: var(--amber-dim); }
+
+  .repo-meta{ min-width:0; }
+  .repo-name{
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    display:block;
+    transition: color 0.15s ease;
+  }
+  .repo-desc{
+    font-size: 12.5px;
+    color: var(--text-dim);
+    margin-top: 3px;
+    line-height: 1.5;
+  }
+
+  .arrow{
+    color: var(--amber);
+    font-size: 14px;
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: all 0.15s ease;
+  }
+
+  /* ---- Footer ---- */
+  .footer{
+    margin-top: 60px;
+    padding-top: 24px;
+    border-top: 1px solid #201d16;
+    font-size: 12px;
+    color: var(--text-dim);
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .footer .quote{ color: var(--amber-dim); font-style: normal; }
+
+  a.footer-link:hover{ color: var(--amber); }
+
+  @media (max-width: 560px){
+    .repo-row{ grid-template-columns: 1fr auto; }
+    .perm{ display:none; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation: none !important; transition: none !important; opacity: 1 !important; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="boot">
+    <span>[ 0.0021 ] initializing session...</span>
+    <span>[ 0.0140 ] loading operator profile...</span>
+    <span>[ 0.0233 ] mounting /repos...</span>
+    <span class="ok">[ 0.0310 ] ready.</span>
+  </div>
+
+  <div class="prompt-line"><span class="user">root@offsec</span>:~$ whoami</div>
+  <h1>Red Teamer &amp; Web Pentester<span class="cursor"></span></h1>
+
+  <p class="bio">
+    I research and document the <strong>offensive side of security</strong> —
+    red team operations, web application exploitation, and the tradecraft
+    behind both. Most of what I publish is <strong>write-ups and methodology</strong>,
+    not just tools: how engagements are scoped, how attack chains are built,
+    and what's actually happening under the hood. I also dig into
+    <strong>malware analysis</strong>, <strong>exploit development</strong>,
+    and occasionally the <strong>blue team</strong> side — understanding
+    detection makes the offense sharper.
+  </p>
+
+  <div class="tags">
+    <span class="tag">RED TEAM</span>
+    <span class="tag">WEB EXPLOITATION</span>
+    <span class="tag">EXPLOIT DEV</span>
+    <span class="tag">MALWARE ANALYSIS</span>
+    <span class="tag">SOCIAL ENGINEERING</span>
+    <span class="tag">CTF WRITE-UPS</span>
+  </div>
+
+  <div class="section-label"><span class="cmd">$</span> ls -la ~/repos</div>
+
+  <div class="listing" id="listing"></div>
+
+  <div class="footer">
+    <span class="quote">"Discipline is the only path to mastery." — Musashi</span>
+    <a class="footer-link" href="#" id="ghlink">github.com/yourusername</a>
+  </div>
+
+</div>
+
+<script>
+  const repos = [
+    {
+      perm: "rwxr-xr-x",
+      name: "ctf-writeups",
+      desc: "General CTF write-ups, guides, and command references across Linux, Windows, macOS, and Active Directory.",
+      url: "#"
+    },
+    {
+      perm: "rwx------",
+      name: "red-team-ops",
+      desc: "Adversary emulation, attack path planning, AD tradecraft, and lateral movement methodology.",
+      url: "#"
+    },
+    {
+      perm: "rwxr-x---",
+      name: "web-exploitation",
+      desc: "XSS, SQLi, SSRF, auth bypasses, IDOR, deserialization — methodology and real-world findings.",
+      url: "#"
+    },
+    {
+      perm: "r-xr-x---",
+      name: "malware-analysis",
+      desc: "Static/dynamic analysis, reverse engineering workflows, unpacking, and behavioral breakdowns.",
+      url: "#"
+    },
+    {
+      perm: "rwx--x---",
+      name: "exploit-dev",
+      desc: "Memory corruption, fuzzing methodology, debugging workflows, and vuln-to-exploit reasoning.",
+      url: "#"
+    },
+    {
+      perm: "r--r-----",
+      name: "social-engineering",
+      desc: "Pretexting, phishing campaign design, OSINT-driven targeting, and vishing methodology.",
+      url: "#"
+    }
+  ];
+
+  const listing = document.getElementById('listing');
+  repos.forEach((r, i) => {
+    const row = document.createElement('a');
+    row.className = 'repo-row';
+    row.href = r.url;
+    row.style.animationDelay = (0.15 + i * 0.06) + 's';
+    row.innerHTML = `
+      <span class="perm"><span class="set">${r.perm}</span></span>
+      <span class="repo-meta">
+        <span class="repo-name">${r.name}/</span>
+        <span class="repo-desc">${r.desc}</span>
+      </span>
+      <span class="arrow">&#8594;</span>
+    `;
+    listing.appendChild(row);
+  });
+</script>
+</body>
+</html>
