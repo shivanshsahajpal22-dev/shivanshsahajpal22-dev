@@ -1,28 +1,36 @@
-# 🛡️ Security Researcher & Tool Builder
+# 🛡️ Red Teamer | Web Pentester | Offensive Security Writer
 
-I am a **Cybersecurity Researcher** focused on the intersection of **Web Security**, **Cloud Infrastructure**, and **Offensive Automation**. I bridge the gap between low-level performance and high-level reconnaissance.
+I'm a security researcher focused on **offensive security** — red teaming, web application penetration testing, and the tradecraft behind both. Most of my work shows up as **write-ups and guides**, not just tools: breaking down attack chains, documenting methodology, and sharing what I learn along the way.
 
-### 🚀 The Weekly Drop
-I release a new security tool, exploit script, or research project **every single week**. Check my pinned repositories for the latest release.
+I also dip into **malware analysis**, **exploit development**, and **blue team** perspectives — because understanding detection and defense makes the offensive side sharper.
 
 ---
 
-### 🛠️ Technical Arsenal
+### 🎯 What I Do
 
-* **Languages:** * **Go** (High-concurrency networking & fast recon tools)
-    * **C** (Low-level exploitation & systems programming)
-    * **Python** (Rapid prototyping & automation)
-* **Focus Areas:**
-    * 🎯 **Bug Bounty:** Advanced reconnaissance and vulnerability discovery.
-    * ☁️ **Cloud Security:** Identifying misconfigurations and IAM pivots.
-    * 🌐 **Web Hacking:** Deep-dive analysis of modern web architectures.
-* **Environment:** Kali Linux | Kali NetHunter | Custom Go Binaries
+* **Red Teaming** — adversary emulation, attack path documentation, AD/network engagements
+* **Web Pentesting** — deep-dive analysis of modern web app architectures and attack surfaces
+* **Malware & Exploit Dev** — write-ups on technique, tooling internals, and vulnerability research
+* **Blue Team Notes** — occasional detection-engineering and defensive perspective, because knowing how defenders think makes offense better
+
+---
+
+### ✍️ Content over noise
+
+I'm less about shipping a tool every week and more about writing things worth reading — methodology breakdowns, technique deep-dives, and guides that actually explain the *why*, not just the *how*. Check my pinned repos and posts for the latest.
+
+---
+
+### 🛠️ Working Environment
+
+**Languages:** Python (automation, rapid prototyping) · Go (recon tooling) · C (low-level/exploit work)
+**Platform:** Kali Linux | Kali NetHunter
 
 ---
 
 ### 🤝 Let's Connect
-* **Freelancing:** I am open to custom security tool development and security consulting.
-* **Collaboration:** If you're working on a Go-based security project or a unique recon methodology, let's talk.
-* **Updates:** Watch my repositories for the weekly tool release.
+
+* **Collaboration:** Always down to talk red team methodology, web app research, or writing.
+* **Consulting/Freelance:** Open to pentest engagements and security write-up collabs.
 
 > "Discipline is the only path to mastery." — *Inspired by Miyamoto Musashi*
