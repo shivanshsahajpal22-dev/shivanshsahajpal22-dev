@@ -33,6 +33,8 @@ I'm less about shipping a tool every week and more about writing things worth re
 * **Collaboration:** Always down to talk red team methodology, web app research, or writing.
 * **Consulting/Freelance:** Open to pentest engagements and security write-up collabs.
 
+---
+
 ### 📆 Self-schedule this week 
 - 14 August - Thryve CTF 2026
 - 15 August - Athena OSINT CTF 
