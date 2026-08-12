@@ -34,13 +34,13 @@ I'm less about shipping a tool every week and more about writing things worth re
 * **Consulting/Freelance:** Open to pentest engagements and security write-up collabs.
 
 ### 📆 Self-schedule this week 
-14 August - Thryve CTF 2026
-15 August - Athena OSINT CTF 
-16 August - GitHub web exploit completion 
-17 August - Regular routine 
-18 August - Regular routine 
-19 August - Regular routine 
-20 August - Regular routine 
+- 14 August - Thryve CTF 2026
+- 15 August - Athena OSINT CTF 
+- 16 August - GitHub web exploit completion 
+- 17 August - Regular routine 
+- 18 August - Regular routine 
+- 19 August - Regular routine 
+- 20 August - Regular routine 
 
 
 > "Discipline is the only path to mastery." — *Inspired by Miyamoto Musashi*
