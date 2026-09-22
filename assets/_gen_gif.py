@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render a terminal typewriter GIF of the GitHub/octocat ASCII banner."""
+"""Terminal typewriter GIF: fsociety Guy Fawkes mask + identity banner."""
 
 from pathlib import Path
 
@@ -8,44 +8,47 @@ from PIL import Image, ImageDraw, ImageFont
 FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"
 FONT_BOLD = "/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf"
 
-BG = (7, 8, 6)
-CHROME = (16, 20, 15)
-BORDER = (31, 42, 28)
-DIM = (138, 154, 130)
-GREEN = (61, 220, 132)
-AMBER = (255, 179, 0)
-TEXT = (200, 212, 192)
-RED = (255, 92, 77)
-YELLOW = (255, 179, 0)
-OK = (61, 220, 132)
+# Cool, dark, desaturated — not neon / not warm amber
+BG = (5, 8, 12)
+CHROME = (10, 16, 22)
+BORDER = (26, 40, 54)
+DIM = (74, 102, 118)
+CYAN = (74, 148, 169)       # muted steel cyan
+ICE = (158, 196, 212)       # cool body text
+MASK = (210, 222, 228)      # pompous cool-white mask
+RED = (90, 28, 36)          # dark window buttons, not candy
+YELLOW = (58, 78, 92)
+OK = (46, 92, 108)
+CURSOR = (74, 148, 169)
 
-W, H = 820, 600
+W, H = 820, 680
 PAD_X = 24
 PAD_Y = 44
-LH = 14
+LH = 15
 FS = 12
 
-octocat = [
-    "           MMM.           .MMM",
-    "           MMMMMMMMMMMMMMMMMMM",
-    "           MMMMMMMMMMMMMMMMMMM",
-    "          MMMMMMMMMMMMMMMMMMMMM",
-    "         MMMMMMMMMMMMMMMMMMMMMMM",
-    "        MMMMMMMMMMMMMMMMMMMMMMMMM",
-    "        MMMM::- -:::::::- -::MMMM",
-    "         MM~:~ 00~:::::~ 00~:~MM",
-    "    .. MMMMM::.00:::+:::.00::MMMMM ..",
-    "          .MM::::: ._. :::::MM.",
-    "             MMMM;:::::;MMMM",
-    "      -MM        MMMMMMM",
-    "      ^  M+     MMMMMMMMM",
-    "          MMMMMMM MM MM MM",
-    "               MM MM MM MM",
-    "               MM MM MM MM",
-    "            .~~MM~MM~MM~~.",
-    "         ~~~~MMMMMMMMMMM~~~~",
-    "        ~~~~MMMMMMMMMMMMM~~~~",
-    "       ~~~~MMMMMMMMMMMMMMM~~~~",
+mask = [
+    "              .oMMMMMMMMMMMMMMMo.",
+    "            .MMMMMMMMMMMMMMMMMMMM.",
+    "           MMMMMM'  `'MMMM`'  'MMMMM",
+    "          MMMMM'      `MM'      'MMMM",
+    "          MMMM'                  'MMM",
+    "          MMM'   .--.      .--.   'MM",
+    "          MM'   /    \\    /    \\   'M",
+    "          M'    \\    /    \\    /    '",
+    "          M      `--'      `--'     M",
+    "          M          \\  /           M",
+    "          M           \\/            M",
+    "          M         ______          M",
+    "          M        /      \\         M",
+    "          MM       \\______/        MM",
+    "          MMM                     MMM",
+    "          MMMM.                 .MMMM",
+    "          MMMMMM.             .MMMMMM",
+    "           'MMMMMMM.........MMMMMMM'",
+    "             'MMMMMMMMMMMMMMMMMMM'",
+    "                'MMMMMMMMMMMMM'",
+    "                   '\"\"\"\"\"\"\"'",
 ]
 
 name = [
@@ -57,10 +60,10 @@ name = [
 ]
 
 boot = [
-    "root@offsec:~$ ./identify.sh",
+    "root@fsociety:~$ ./identify.sh",
+    "[*] hello, friend.",
     "[*] loading operator profile .............. OK",
-    "[*] mounting tool chain ................... OK",
-    "[*] dropping ascii payload ................ OK",
+    "[*] dropping mask payload ................. OK",
     "",
 ]
 
@@ -69,24 +72,27 @@ footer = [
     "  [ PROFESSIONAL HACKER ]   [ TOOL DESIGNER ]",
     "  building offensive tooling  |  write-ups: rare",
     "",
-    "root@offsec:~$ whoami",
+    "root@fsociety:~$ whoami",
     "shivanshsahajpal22-dev",
 ]
 
 lines = []
 for s in boot:
-    lines.append((s, DIM if s.startswith("[*]") else AMBER))
-for s in octocat:
-    lines.append((s, GREEN))
+    if s.startswith("[*]"):
+        lines.append((s, DIM))
+    else:
+        lines.append((s, CYAN))
+for s in mask:
+    lines.append((s, MASK))
 for s in name:
-    lines.append((s, AMBER))
+    lines.append((s, CYAN))
 for s in footer:
     if s.startswith("root@"):
-        lines.append((s, AMBER))
+        lines.append((s, CYAN))
     elif s == "shivanshsahajpal22-dev":
-        lines.append((s, GREEN))
+        lines.append((s, ICE))
     else:
-        lines.append((s, TEXT))
+        lines.append((s, ICE))
 
 
 def chrome(draw, font_ui):
@@ -96,13 +102,13 @@ def chrome(draw, font_ui):
     draw.ellipse((12, 9, 22, 19), fill=RED)
     draw.ellipse((28, 9, 38, 19), fill=YELLOW)
     draw.ellipse((44, 9, 54, 19), fill=OK)
-    draw.text((66, 8), "root@offsec: ~/identity \u2014 bash", font=font_ui, fill=DIM)
+    draw.text((66, 8), "root@fsociety: ~/identity \u2014 bash", font=font_ui, fill=DIM)
 
 
 def paint_lines(draw, font, font_b, upto):
     for i, (text, color) in enumerate(lines[:upto]):
         y = PAD_Y + i * LH
-        use = font_b if color in (GREEN, AMBER) and not text.startswith("[*]") else font
+        use = font_b if color in (MASK, CYAN) and not text.startswith("[*]") else font
         draw.text((PAD_X, y), text, font=use, fill=color)
 
 
@@ -122,7 +128,7 @@ def main():
 
     blank, _ = new_frame()
     frames.append(blank)
-    durations.append(200)
+    durations.append(220)
 
     for n in range(1, len(lines) + 1):
         img, draw = new_frame()
@@ -130,9 +136,9 @@ def main():
         last = lines[n - 1][0]
         tw = draw.textlength(last, font=font)
         cy = PAD_Y + (n - 1) * LH
-        draw.rectangle((PAD_X + int(tw) + 2, cy + 1, PAD_X + int(tw) + 8, cy + FS), fill=GREEN)
+        draw.rectangle((PAD_X + int(tw) + 2, cy + 1, PAD_X + int(tw) + 8, cy + FS), fill=CURSOR)
         frames.append(img)
-        durations.append(65)
+        durations.append(60)
 
     on = frames[-1]
     off, draw = new_frame()
@@ -156,7 +162,9 @@ def main():
         optimize=True,
         disposal=2,
     )
-    print(f"wrote {out} ({out.stat().st_size / 1024:.1f} KB, {len(qframes)} frames)")
+    print(f"wrote {out} ({out.stat().st_size / 1024:.1f} KB, {len(qframes)} frames, H={H}, lines={len(lines)}")
+    last_y = PAD_Y + len(lines) * LH
+    print(f"last text y~{last_y} canvas H={H}")
 
 
 if __name__ == "__main__":
