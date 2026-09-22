@@ -1,8 +1,11 @@
 <div align="center">
 
+<!-- Terminal ASCII identity — typewriter GIF (GitHub animates GIFs; SMIL SVGs often get stripped) -->
+<img src="./assets/github-ascii.gif" alt="root@offsec identity — GitHub ASCII typewriter" width="820" />
+
 <!-- Typing Animation -->
 <a href="https://github.com/shivanshsahajpal22-dev">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=28&pause=1000&color=FFB300&center=true&vCenter=true&repeat=true&width=700&height=60&lines=Red+Teamer+%7C+Web+Pentester;Offensive+Security+Researcher;Malware+Analyst+%7C+Exploit+Dev;Writing+the+%22why%22+behind+every+hack;Discipline+is+the+only+path+to+mastery." alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=26&pause=1000&color=3DDC84&center=true&vCenter=true&repeat=true&width=700&height=56&lines=Professional+Hacker+%7C+Tool+Designer;I+build+offensive+tooling;Red+Teamer+%7C+Web+Pentester;Guides+%26+write-ups+—+occasionally;Discipline+is+the+only+path+to+mastery." alt="Typing SVG" />
 </a>
 
 <br/>

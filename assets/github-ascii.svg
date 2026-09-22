@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="720" viewBox="0 0 900 720" role="img" aria-label="terminal ascii identity">
+  <defs>
+    <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="2" fill="#000" opacity="0.18"/>
+    </pattern>
+    <linearGradient id="glow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#00ff41" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#00ff41" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="100%" height="100%" rx="10" fill="#070806"/>
+  <rect x="1" y="1" width="898" height="718" rx="9" fill="none" stroke="#1f2a1c" stroke-width="1.5"/>
+  <rect x="1" y="1" width="898" height="28" rx="9" fill="#10140f"/>
+  <rect x="1" y="22" width="898" height="8" fill="#10140f"/>
+  <circle cx="18" cy="15" r="5" fill="#ff5c4d"/>
+  <circle cx="34" cy="15" r="5" fill="#ffb300"/>
+  <circle cx="50" cy="15" r="5" fill="#3ddc84"/>
+  <text x="70" y="19" fill="#6e7b68" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11">root@offsec: ~/identity — bash</text>
+
+  <rect x="8" y="34" width="884" height="678" rx="4" fill="url(#glow)"/>
+  <style>
+    .t { font-family: ui-monospace, 'JetBrains Mono', 'IBM Plex Mono', SFMono-Regular, Menlo, Consolas, monospace; white-space: pre; }
+    .boot { fill: #8a9a82; font-size: 12px; }
+    .art  { fill: #3ddc84; font-size: 12.5px; font-weight: 700; }
+    .name { fill: #ffb300; font-size: 13.5px; font-weight: 700; }
+    .meta { fill: #c8d4c0; font-size: 12.5px; }
+    .prompt { fill: #ffb300; font-size: 12.5px; }
+    .who { fill: #3ddc84; font-size: 12.5px; font-weight: 700; }
+    .cursor { fill: #3ddc84; }
+  </style>
+  <text class="t boot" x="36" y="56" xml:space="preserve" opacity="0">root@offsec:~$ ./identify.sh<animate attributeName="opacity" from="0" to="1" begin="0.12s" dur="0.08s" fill="freeze"/></text>
+  <text class="t boot" x="36" y="72" xml:space="preserve" opacity="0">[*] loading operator profile .............. OK<animate attributeName="opacity" from="0" to="1" begin="0.19s" dur="0.08s" fill="freeze"/></text>
+  <text class="t boot" x="36" y="88" xml:space="preserve" opacity="0">[*] mounting tool chain ................... OK<animate attributeName="opacity" from="0" to="1" begin="0.26s" dur="0.08s" fill="freeze"/></text>
+  <text class="t boot" x="36" y="104" xml:space="preserve" opacity="0">[*] dropping ascii payload ................ OK<animate attributeName="opacity" from="0" to="1" begin="0.33s" dur="0.08s" fill="freeze"/></text>
+  <text class="t boot" x="36" y="120" xml:space="preserve" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.4s" dur="0.08s" fill="freeze"/></text>
+  <text class="t art" x="36" y="136" xml:space="preserve" opacity="0">           MMM.           .MMM<animate attributeName="opacity" from="0" to="1" begin="0.47s" dur="0.08s" fill="freeze"/></text>
+  <text class="t art" x="36" y="152" xml:space="preserve" opacity="0">           MMMMMMMMMMMMMMMMMMM<animate attributeName="opacity" from="0" to="1" begin="0.54s" dur="0.08s" fill="freeze"/></text>
+  <text class="t art" x="36" y="168" xml:space="preserve" opacity="0">           MMMMMMMMMMMMMMMMMMM<animate attributeName="opacity" from="0" to="1" begin="0.61s" dur="0.08s" fill="freeze"/></text>
+  <text class="t art" x="36" y="184" xml:space="preserve" opacity="0">          MMMMMMMMMMMMMMMMMMMMM<animate attributeName="opacity" from="0" to="1" begin="0.68s" dur="0.08s" fill="freeze"/></text>
+  <text class="t art" x="36" y="200" xml:space="preserve" opacity="0">         MMMMMMMMMMMMMMMMMMMMMMM<animate attributeName="opacity" from="0" to="1" begin="0.75s" dur="0.08s" fill="freeze"/></text>
+  <text class="t art" x="36" y="216" xml:space="preserve" opacity="0">        MMMMMMMMMMMMMMMMMMMMMMMMM<animate attributeName="opacity" from="0" to="1" begin="0.82s" dur="0.08s" fill="freeze"/></text>
+  <text class="t art" x="36" y="232" xml:space="preserve" opacity="0">        MMMM::- -:::::::- -::MMMM<animate attributeName="opacity" from="0" to="1" begin="0.89s" dur="0.08s" fill="freeze"/></text>
+  <text class="t art" x="36" y="248" xml:space="preserve" opacity="0">         MM~:~ 00~:::::~ 00~:~MM<animate attributeName="opacity" from="0" to="1" begin="0.96s" dur="0.08s" fill="freeze"/></text>
+  <text class="t art" x="36" y="264" xml:space="preserve" opacity="0">    .. MMMMM::.00:::+:::.00::MMMMM ..<animate attributeName="opacity" from="0" to="1" begin="1.03s" dur="0.08s" fill="freeze"/></text>
+  <text class="t art" x="36" y="280" xml:space="preserve" opacity="0">          .MM::::: ._. :::::MM.<animate attributeName="opacity" from="0" to="1" begin="1.1s" dur="0.08s" fill="freeze"/></text>
+  <text class="t art" x="36" y="296" xml:space="preserve" opacity="0">             MMMM;:::::;MMMM<animate attributeName="opacity" from="0" to="1" begin="1.17s" dur="0.08s" fill="freeze"/></text>
+  <text class="t art" x="36" y="312" xml:space="preserve" opacity="0">      -MM        MMMMMMM<animate attributeName="opacity" from="0" to="1" begin="1.24s" dur="0.08s" fill="freeze"/></text>
+  <text class="t art" x="36" y="328" xml:space="preserve" opacity="0">      ^  M+     MMMMMMMMM<animate attributeName="opacity" from="0" to="1" begin="1.31s" dur="0.08s" fill="freeze"/></text>
+  <text class="t art" x="36" y="344" xml:space="preserve" opacity="0">          MMMMMMM MM MM MM<animate attributeName="opacity" from="0" to="1" begin="1.38s" dur="0.08s" fill="freeze"/></text>
+  <text class="t art" x="36" y="360" xml:space="preserve" opacity="0">               MM MM MM MM<animate attributeName="opacity" from="0" to="1" begin="1.45s" dur="0.08s" fill="freeze"/></text>
+  <text class="t art" x="36" y="376" xml:space="preserve" opacity="0">               MM MM MM MM<animate attributeName="opacity" from="0" to="1" begin="1.52s" dur="0.08s" fill="freeze"/></text>
+  <text class="t art" x="36" y="392" xml:space="preserve" opacity="0">            .~~MM~MM~MM~~.<animate attributeName="opacity" from="0" to="1" begin="1.59s" dur="0.08s" fill="freeze"/></text>
+  <text class="t art" x="36" y="408" xml:space="preserve" opacity="0">         ~~~~MMMMMMMMMMM~~~~<animate attributeName="opacity" from="0" to="1" begin="1.66s" dur="0.08s" fill="freeze"/></text>
+  <text class="t art" x="36" y="424" xml:space="preserve" opacity="0">        ~~~~MMMMMMMMMMMMM~~~~<animate attributeName="opacity" from="0" to="1" begin="1.73s" dur="0.08s" fill="freeze"/></text>
+  <text class="t art" x="36" y="440" xml:space="preserve" opacity="0">       ~~~~MMMMMMMMMMMMMMM~~~~<animate attributeName="opacity" from="0" to="1" begin="1.8s" dur="0.08s" fill="freeze"/></text>
+  <text class="t name" x="36" y="456" xml:space="preserve" opacity="0">   _____ __  _______    _____    _   _______ __  __<animate attributeName="opacity" from="0" to="1" begin="1.87s" dur="0.08s" fill="freeze"/></text>
+  <text class="t name" x="36" y="472" xml:space="preserve" opacity="0">  / ___// / / /  _/ |  / /   |  / | / / ___// / / /<animate attributeName="opacity" from="0" to="1" begin="1.94s" dur="0.08s" fill="freeze"/></text>
+  <text class="t name" x="36" y="488" xml:space="preserve" opacity="0">  \__ \/ /_/ // / | | / / /| | /  |/ /\__ \/ /_/ /<animate attributeName="opacity" from="0" to="1" begin="2.01s" dur="0.08s" fill="freeze"/></text>
+  <text class="t name" x="36" y="504" xml:space="preserve" opacity="0"> ___/ / __  // /  | |/ / ___ |/ /|  /___/ / __  /<animate attributeName="opacity" from="0" to="1" begin="2.08s" dur="0.08s" fill="freeze"/></text>
+  <text class="t name" x="36" y="520" xml:space="preserve" opacity="0">/____/_/ /_/___/  |___/_/  |_/_/ |_//____/_/ /_/<animate attributeName="opacity" from="0" to="1" begin="2.15s" dur="0.08s" fill="freeze"/></text>
+  <text class="t meta" x="36" y="536" xml:space="preserve" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="2.22s" dur="0.08s" fill="freeze"/></text>
+  <text class="t meta" x="36" y="552" xml:space="preserve" opacity="0">  [ PROFESSIONAL HACKER ]   [ TOOL DESIGNER ]<animate attributeName="opacity" from="0" to="1" begin="2.29s" dur="0.08s" fill="freeze"/></text>
+  <text class="t meta" x="36" y="568" xml:space="preserve" opacity="0">  building offensive tooling  |  write-ups: rare<animate attributeName="opacity" from="0" to="1" begin="2.36s" dur="0.08s" fill="freeze"/></text>
+  <text class="t meta" x="36" y="584" xml:space="preserve" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="2.43s" dur="0.08s" fill="freeze"/></text>
+  <text class="t prompt" x="36" y="600" xml:space="preserve" opacity="0">root@offsec:~$ whoami<animate attributeName="opacity" from="0" to="1" begin="2.5s" dur="0.08s" fill="freeze"/></text>
+  <text class="t who" x="36" y="616" xml:space="preserve" opacity="0">shivanshsahajpal22-dev<animate attributeName="opacity" from="0" to="1" begin="2.57s" dur="0.08s" fill="freeze"/></text>
+
+  <rect class="cursor" x="36" y="624" width="8" height="13" opacity="0">
+    <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.02;0.5;0.52;1" dur="1s" begin="2.77s" repeatCount="indefinite"/>
+  </rect>
+
+  <rect width="100%" height="100%" fill="url(#scan)" pointer-events="none" opacity="0.35"/>
+</svg>
