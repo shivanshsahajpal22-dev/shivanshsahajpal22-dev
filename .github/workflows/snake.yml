@@ -1,0 +1,74 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# 🐍  GitHub Contribution Snake — platane/snk
+# ─────────────────────────────────────────────────────────────────────────────
+#
+# BEFORE THIS WORKFLOW WILL WORK YOU MUST:
+#
+#   1. Go to your repo on GitHub:
+#      Settings → Actions → General → Workflow permissions
+#      ✅ Select "Read and write permissions"
+#      ✅ Check "Allow GitHub Actions to create and approve pull requests"
+#      Then click "Save".
+#
+#   2. Push this file to the default branch (main).
+#      The workflow will then run automatically on the next scheduled time,
+#      OR you can trigger it manually:
+#      Actions tab → "Generate Snake" → Run workflow → Run workflow
+#
+#   3. After the first successful run, an "output" branch will be created
+#      automatically containing the two SVG files:
+#        • github-contribution-grid-snake.svg       (light mode)
+#        • github-contribution-grid-snake-dark.svg  (dark mode)
+#
+#   The README.md already references them via raw.githubusercontent.com.
+#   No further changes needed!
+#
+# ─────────────────────────────────────────────────────────────────────────────
+
+name: Generate Snake
+
+on:
+  # Run every day at 06:00 UTC so the snake stays fresh
+  schedule:
+    - cron: "0 6 * * *"
+
+  # Allow manual triggering from the Actions tab
+  workflow_dispatch:
+
+  # Also regenerate whenever this workflow file itself is updated
+  push:
+    paths:
+      - ".github/workflows/snake.yml"
+
+jobs:
+  generate:
+    name: Generate contribution snake SVGs
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    permissions:
+      contents: write   # needed to push the SVGs to the output branch
+
+    steps:
+      # ── 1. Generate both light-mode and dark-mode snake SVGs ───────────────
+      - name: Generate snake (light + dark)
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+
+          # Output file paths inside the Action's workspace.
+          # Both will be committed to the "output" branch below.
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+
+      # ── 2. Push the generated SVGs to the "output" branch ─────────────────
+      - name: Push SVGs to output branch
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output          # branch where the SVGs will live
+          build_dir: dist                # directory produced in step 1
+          keep_history: false            # overwrite on every run (keeps branch lean)
+          commit_message: "chore: regenerate snake SVGs [skip ci]"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
