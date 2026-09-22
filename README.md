@@ -20,15 +20,13 @@
 
 ## 🧠 About Me
 
-I'm a **security researcher** focused on the **offensive side of security** — red teaming, web application penetration testing, and the tradecraft behind both. Most of what I publish is **write-ups and methodology**, not just tools: how engagements are scoped, how attack chains are built, and what's actually happening under the hood.
+I'm a **professional hacker** and **tool designer** who builds hacking-related tools, and ships practical research for people who care about real tradecraft.
 
-I also dig into **malware analysis**, **exploit development**, and occasionally the **blue team** side — because understanding detection and defense makes the offense sharper.
+I work across **red teaming** and **web application exploitation**, but my writing is more **occasional** than constant: when I do publish, it's as **guides and write-ups**—focused on actionable methodology, tooling internals, and the *why* behind effective exploitation.
 
-- 🔴 **Red Teaming** — adversary emulation, attack path documentation, AD & network engagements
-- 🌐 **Web Pentesting** — deep-dive analysis of modern web app architectures and attack surfaces
-- 🦠 **Malware & Exploit Dev** — technique breakdowns, tooling internals, and vulnerability research
-- 🛡️ **Blue Team Notes** — detection engineering and defensive perspective; knowing how defenders think makes offense better
-- ✍️ **Content over noise** — methodology breakdowns and technique deep-dives that explain the *why*, not just the *how*
+- 🔴 **Tool Design** — practical hacking utilities, automation, and internals-focused engineering
+- 🌐 **Web Pentesting** — deep dives into modern web app attack surfaces and exploitation flows
+- 🦠 **Exploit & Malware Mindset** — analysis-driven development; understanding detection makes offense sharper
 
 > *"Discipline is the only path to mastery."* — Inspired by Miyamoto Musashi
 
