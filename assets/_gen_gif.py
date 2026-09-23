@@ -32,7 +32,7 @@ mask = []
 
 name = [
     "   root@fsociety:~$",
-    "   shivansh sahajpal",
+    "   Shivansh Sahajpal",
     "   (ready to execute)",
     "",
 ]
@@ -63,8 +63,8 @@ for s in boot:
         lines.append((s, DIM))
     else:
         lines.append((s, CYAN))
-for s in mask:
-    lines.append((s, MASK))
+# mask removed
+# (intentionally no mask lines added)
 for s in name:
     lines.append((s, CYAN))
 for s in footer:
