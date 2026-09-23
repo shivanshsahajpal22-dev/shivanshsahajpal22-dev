@@ -1,7 +1,12 @@
 <div align="center">
 
 <!-- Terminal ASCII identity — typewriter GIF (GitHub animates GIFs; SMIL SVGs often get stripped) -->
-<img src="./assets/github-ascii.gif?v=1" alt="fsociety identity — GitHub ASCII typewriter" width="820" />
+<img src="./assets/github-ascii.gif?v=2" alt="fsociety identity — GitHub ASCII typewriter" width="820" height="578" />
+
+<!-- Welcome heading — left-to-right typing, dark blue -->
+<a href="https://github.com/shivanshsahajpal22-dev">
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=28&duration=2800&pause=1200&color=1E4B8C&center=true&vCenter=true&repeat=true&width=720&height=48&lines=Welcome+to+Hack+Society" alt="Welcome to Hack Society" />
+</a>
 
 <!-- Typing Animation -->
 <a href="https://github.com/shivanshsahajpal22-dev">
@@ -31,7 +36,11 @@ I'm a **professional hacker** and **tool designer** who builds hacking-related t
 
 I work across **red teaming** and **web application exploitation**, but my writing is more **occasional** than constant: when I do publish, it's as **guides and write-ups**—focused on actionable methodology, tooling internals, and the *why* behind effective exploitation.
 
-I’m big on turning messy primitives into reliable paths: recon that produces signal, exploitation flows that survive real-world constraints, and debugging notes that make future attempts faster.
+I like turning messy primitives into reliable paths: recon that produces signal, exploitation flows that survive real-world constraints, and debugging notes that make future attempts faster. Most of the interesting work happens in the boring middle — scoping what actually matters, keeping notes honest, and documenting the parts that break when you try the same chain twice.
+
+When I publish, I try to keep it useful: how an attack surface looks in practice, how I decide what to chase, and how I verify that a finding is real instead of a pretty screenshot. I also spend time on **malware analysis** and **exploit development**, and I keep one eye on detection because understanding the blue team side makes offense sharper.
+
+If you read my stuff, expect methodology over hype: small steps, measurable progress, and write-ups that still make sense after the caffeine wears off.
 
 - 🧩 **Tool Design** — practical hacking utilities, automation, and internals-focused engineering
 - 🕸️ **Web Pentesting** — deep dives into modern web app attack surfaces and exploitation flows
@@ -90,20 +99,14 @@ I’m big on turning messy primitives into reliable paths: recon that produces s
 
 </div>
 
----
-
-## 🐍 Contribution Snake
-
 <div align="center">
 
-<!-- Snake animation — generated daily by GitHub Actions (.github/workflows/snake.yml) -->
+<!-- Contribution graph — kept under GitHub Stats -->
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/shivanshsahajpal22-dev/shivanshsahajpal22-dev/output/github-contribution-grid-snake-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/shivanshsahajpal22-dev/shivanshsahajpal22-dev/output/github-contribution-grid-snake.svg" />
-  <img alt="GitHub contribution snake animation" src="https://raw.githubusercontent.com/shivanshsahajpal22-dev/shivanshsahajpal22-dev/output/github-contribution-grid-snake-dark.svg" />
+  <img alt="GitHub contribution graph" src="https://raw.githubusercontent.com/shivanshsahajpal22-dev/shivanshsahajpal22-dev/output/github-contribution-grid-snake-dark.svg" />
 </picture>
-
-> 🕯️ Snake not showing? Push the repo and wait for the **Generate Snake** Action to run (or trigger it manually from the **Actions** tab). See `.github/workflows/snake.yml`.
 
 </div>
 

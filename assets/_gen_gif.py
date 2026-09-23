@@ -13,15 +13,15 @@ BG = (5, 8, 12)
 CHROME = (10, 16, 22)
 BORDER = (26, 40, 54)
 DIM = (74, 102, 118)
-CYAN = (74, 148, 169)       # muted steel cyan
-ICE = (158, 196, 212)       # cool body text
-MASK = (140, 196, 255)      # cool fsociety mask cyan
-RED = (90, 28, 36)          # dark window buttons, not candy
-YELLOW = (50, 70, 90)      # keep UI muted
-OK = (30, 120, 160)         # cool scanline accent
-CURSOR = (74, 148, 169)
+CYAN = (86, 176, 214)       # cooler ice cyan
+ICE = (168, 214, 232)       # cool body text
+MASK = (120, 188, 255)      # cool fsociety mask cyan
+RED = (70, 28, 42)          # dark window buttons, not candy
+YELLOW = (42, 78, 108)      # cool steel, not warm
+OK = (28, 132, 176)         # cool scanline accent
+CURSOR = (86, 176, 214)
 
-W, H = 820, 680
+W, H = 820, 578
 PAD_X = 24
 PAD_Y = 44
 LH = 15
@@ -51,13 +51,7 @@ mask = [
     "                   '\"\"\"\"\"\"\"'",
 ]
 
-name = [
-    "   _____ __  _______    _____    _   _______ __  __",
-    "  / ___// / / /  _/ |  / /   |  / | / / ___// / / /",
-    r"  \__ \/ /_/ // / | | / / /| | /  |/ /\__ \/ /_/ /",
-    " ___/ / __  // /  | |/ / ___ |/ /|  /___/ / __  /",
-    "/____/_/ /_/___/  |___/_/  |_/_/ |_//____/_/ /_/",
-]
+name = []
 
 boot = [
     "root@fsociety:~$ ./identify.sh",
@@ -113,6 +107,7 @@ def paint_lines(draw, font, font_b, upto):
 
 
 def main():
+    # Render: mask only (no extra banner text).
     font = ImageFont.truetype(FONT, FS)
     font_ui = ImageFont.truetype(FONT, 11)
     font_b = ImageFont.truetype(FONT_BOLD, FS)
