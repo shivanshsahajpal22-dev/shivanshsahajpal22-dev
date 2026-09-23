@@ -27,32 +27,12 @@ PAD_Y = 44
 LH = 15
 FS = 12
 
-mask = [
-    "              .oMMMMMMMMMMMMMMMo.",
-    "            .MMMMMMMMMMMMMMMMMMMM.",
-    "           MMMMMM'  `'MMMM`'  'MMMMM",
-    "          MMMMM'      `MM'      'MMMM",
-    "          MMMM'                  'MMM",
-    "          MMM'   .--.      .--.   'MM",
-    "          MM'   /    \\    /    \\   'M",
-    "          M'    \\    /    \\    /    '",
-    "          M      `--'      `--'     M",
-    "          M          \\  /           M",
-    "          M           \\/            M",
-    "          M         ______          M",
-    "          M        /      \\         M",
-    "          MM       \\______/        MM",
-    "          MMM                     MMM",
-    "          MMMM.                 .MMMM",
-    "          MMMMMM.             .MMMMMM",
-    "           'MMMMMMM.........MMMMMMM'",
-    "             'MMMMMMMMMMMMMMMMMMM'",
-    "                'MMMMMMMMMMMMM'",
-    "                   '\"\"\"\"\"\"\"'",
-]
+# mask removed: terminal GIF is now clean identity + boot/apt sequence only.
+mask = []
 
 name = [
     "   root@fsociety:~$",
+    "   shivansh sahajpal",
     "   (ready to execute)",
     "",
 ]
