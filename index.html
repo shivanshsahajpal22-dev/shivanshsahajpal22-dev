@@ -42,6 +42,28 @@
     padding: 64px 24px 100px;
   }
 
+  /* 85% height terminal box tweak (applies to SVG/GIF container if present) */
+  .terminal-box{
+    height: 85vh;
+  }
+
+  /* If any embedded terminal-like assets are present */
+  /* Terminal animation box sizing (your GIF/SVG line) */
+  img[alt^="fsociety identity"],
+  img[alt*="terminal ascii identity"],
+  img[alt*="GitHub ASCII"]{
+    height: 85%;
+    width: auto;
+    display: block;
+  }
+
+  /* In case the hidden assets get used later */
+  img.github-ascii,
+  img.github-ascii-gif{
+    height: 85%;
+    width: auto;
+  }
+
   /* ---- Boot sequence ---- */
   .boot{
     font-size: 13px;
@@ -90,6 +112,12 @@
     max-width: 620px;
     margin-bottom: 8px;
   }
+  
+  /* Slightly more “about me” presence */
+  .bio.more{
+    margin-top: 6px;
+    margin-bottom: 14px;
+  }
   .bio strong{ color: var(--text); font-weight: 600; }
 
   .tags{
@@ -106,6 +134,52 @@
   }
 
   /* ---- Directory listing ---- */
+
+  /* Welcome to hack society heading (left-to-right) */
+  .welcome{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin: 8px 0 18px;
+  }
+  .welcome .bar{
+    width: 10px;
+    height: 10px;
+    background: #1e3a8a;
+    border-radius: 3px;
+    box-shadow: 0 0 18px rgba(46, 91, 255, 0.45);
+  }
+  .welcome h2{
+    margin:0;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #9cc9ff;
+    position: relative;
+  }
+  .welcome h2 .text{
+    display:inline-block;
+    color: #9cc9ff;
+  }
+  .welcome h2 .fill{
+    position:absolute;
+    left:0;
+    top:0;
+    height:100%;
+    width:0;
+    overflow:hidden;
+    color:#7dd3ff;
+    border-bottom: 1px solid rgba(125,211,255,0.4);
+    animation: wipe 1.2s ease forwards;
+  }
+  .welcome h2 .fill span{
+    display:inline-block;
+    transform: translateY(0.01em);
+  }
+  @keyframes wipe{
+    from{ width:0; }
+    to{ width:100%; }
+  }
   .section-label{
     font-size: 12px;
     color: var(--text-dim);
@@ -213,7 +287,15 @@
   <div class="prompt-line"><span class="user">root@offsec</span>:~$ whoami</div>
   <h1>Red Teamer &amp; Web Pentester<span class="cursor"></span></h1>
 
-  <p class="bio">
+  <div class="welcome">
+    <span class="bar" aria-hidden="true"></span>
+    <h2 aria-label="Welcome to Hack Society">
+      <span class="text">Welcome to Hack Society</span>
+      <span class="fill" aria-hidden="true"><span>Welcome to Hack Society</span></span>
+    </h2>
+  </div>
+
+  <p class="bio more">
     I research and document the <strong>offensive side of security</strong> —
     red team operations, web application exploitation, and the tradecraft
     behind both. Most of what I publish is <strong>write-ups and methodology</strong>,
@@ -234,6 +316,11 @@
   </div>
 
   <div class="section-label"><span class="cmd">$</span> ls -la ~/repos</div>
+
+  <div style="display:none" aria-hidden="true">
+    <img src="./assets/github-ascii.gif" alt="" />
+    <img src="./assets/github-ascii.svg" alt="" />
+  </div>
 
   <div class="listing" id="listing"></div>
 
