@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- Terminal ASCII identity — typewriter GIF (GitHub animates GIFs; SMIL SVGs often get stripped) -->
-<!--<img src="./assets/github-ascii.gif" alt="fsociety identity — GitHub ASCII typewriter" width="820" />
+<img src="./assets/github-ascii.gif" alt="fsociety identity — GitHub ASCII typewriter" width="820" />
 
 <!-- Typing Animation -->
 <a href="https://github.com/shivanshsahajpal22-dev">
