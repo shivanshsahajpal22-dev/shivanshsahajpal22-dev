@@ -51,15 +51,22 @@ mask = [
     "                   '\"\"\"\"\"\"\"'",
 ]
 
-name = []
-
-boot = [
-    "root@fsociety:~$ ./identify.sh",
-    "[*] hello, friend.",
-    "[*] loading operator profile .............. OK",
-    "[*] dropping mask payload ................. OK",
+name = [
+    "   root@fsociety:~$",
+    "   (ready to execute)",
     "",
 ]
+
+boot = [
+    "[*] hello, friend.",
+    "[*] loading operator profile .............. OK",
+    "[*] initializing toolchain ............... OK",
+    "[*] sudo apt update ........................ OK",
+    "[*] installing: nmap burpsuite sqlmap .... OK",
+    "[*] ready to go now..",
+    "",
+]
+
 
 footer = [
     "",
