@@ -1,12 +1,13 @@
 <div align="center">
 
-<!-- Terminal ASCII identity — typewriter GIF (GitHub animates GIFs; SMIL SVGs often get stripped) -->
-<img src="./assets/github-ascii.gif?v=2" alt="fsociety identity — GitHub ASCII typewriter" width="820" height="578" />
-
 <!-- Welcome heading — left-to-right typing, dark blue -->
 <a href="https://github.com/shivanshsahajpal22-dev">
   <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=28&duration=2800&pause=1200&color=1E4B8C&center=true&vCenter=true&repeat=true&width=720&height=48&lines=Welcome+to+Hack+Society" alt="Welcome to Hack Society" />
 </a>
+
+<!-- Terminal ASCII identity — typewriter GIF (GitHub animates GIFs; SMIL SVGs often get stripped) -->
+<img src="./assets/github-ascii.gif?v=2" alt="fsociety identity — GitHub ASCII typewriter" width="820" height="578" />
+
 
 <!-- Typing Animation -->
 <a href="https://github.com/shivanshsahajpal22-dev">
