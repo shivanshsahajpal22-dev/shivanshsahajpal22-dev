@@ -2,8 +2,13 @@
 
 <!-- Welcome heading — left-to-right typing, dark blue -->
 <a href="https://github.com/shivanshsahajpal22-dev">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=28&duration=2800&pause=1200&color=1E4B8C&center=true&vCenter=true&repeat=true&width=720&height=48&lines=Welcome+to+Hack+Society" alt="Welcome to Hack Society" />
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=800&size=34&duration=2800&pause=1200&color=1E4B8C&center=true&vCenter=true&repeat=true&width=980&height=64&lines=WELCOME+TO+HACK+SOCIETY" alt="Welcome to Hack Society" />
 </a>
+
+<!-- Terminal install animation (typing) -->
+<div align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=18&duration=2500&pause=800&color=7dd3fc&center=true&vCenter=true&repeat=true&width=860&height=110&lines=sudo+apt+update%3B%0A%0Asudo+apt+install+%E2%80%8Bnmap%2Bburpsuite%2Bsqlmap%3B%0A%0A%3Cinstalling%3E%0A%0Aready+to+go+now.." alt="Install tools animation" />
+</div>
 
 <!-- Terminal ASCII identity — typewriter GIF (GitHub animates GIFs; SMIL SVGs often get stripped) -->
 <img src="./assets/github-ascii.gif?v=2" alt="fsociety identity — GitHub ASCII typewriter" width="820" height="578" />
