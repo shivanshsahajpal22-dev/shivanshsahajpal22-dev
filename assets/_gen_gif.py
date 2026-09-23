@@ -15,10 +15,10 @@ BORDER = (26, 40, 54)
 DIM = (74, 102, 118)
 CYAN = (74, 148, 169)       # muted steel cyan
 ICE = (158, 196, 212)       # cool body text
-MASK = (210, 222, 228)      # pompous cool-white mask
+MASK = (140, 196, 255)      # cool fsociety mask cyan
 RED = (90, 28, 36)          # dark window buttons, not candy
-YELLOW = (58, 78, 92)
-OK = (46, 92, 108)
+YELLOW = (50, 70, 90)      # keep UI muted
+OK = (30, 120, 160)         # cool scanline accent
 CURSOR = (74, 148, 169)
 
 W, H = 820, 680
