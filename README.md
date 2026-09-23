@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- Terminal ASCII identity — typewriter GIF (GitHub animates GIFs; SMIL SVGs often get stripped) -->
-<img src="./assets/github-ascii.gif" alt="fsociety identity — GitHub ASCII typewriter" width="820" />
+<img src="./assets/github-ascii.gif?v=1" alt="fsociety identity — GitHub ASCII typewriter" width="820" />
 
 <!-- Typing Animation -->
 <a href="https://github.com/shivanshsahajpal22-dev">
@@ -30,6 +30,8 @@
 I'm a **professional hacker** and **tool designer** who builds hacking-related tools, and ships practical research for people who care about real tradecraft.
 
 I work across **red teaming** and **web application exploitation**, but my writing is more **occasional** than constant: when I do publish, it's as **guides and write-ups**—focused on actionable methodology, tooling internals, and the *why* behind effective exploitation.
+
+I’m big on turning messy primitives into reliable paths: recon that produces signal, exploitation flows that survive real-world constraints, and debugging notes that make future attempts faster.
 
 - 🧩 **Tool Design** — practical hacking utilities, automation, and internals-focused engineering
 - 🕸️ **Web Pentesting** — deep dives into modern web app attack surfaces and exploitation flows
