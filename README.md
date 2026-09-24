@@ -7,7 +7,7 @@
 
 
 <!-- Terminal ASCII identity — typewriter GIF (GitHub animates GIFs; SMIL SVGs often get stripped) -->
-<img src="./assets/github-ascii.gif?v=2" alt="fsociety identity — GitHub ASCII typewriter" width="820" height="578" />
+<img src="./assets/github-ascii.gif?v=1727140000" alt="fsociety identity — GitHub ASCII typewriter" width="820" height="578" />
 
 
 <!-- Typing Animation -->
