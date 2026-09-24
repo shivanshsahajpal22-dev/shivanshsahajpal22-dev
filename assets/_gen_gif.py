@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Terminal typewriter GIF: fsociety Guy Fawkes mask + identity banner."""
+"""Terminal typewriter GIF: clean identity + boot sequence (no mask)."""
 
 from pathlib import Path
 
