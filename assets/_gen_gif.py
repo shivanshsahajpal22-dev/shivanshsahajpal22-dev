@@ -21,8 +21,8 @@ YELLOW = (42, 78, 108)      # cool steel, not warm
 OK = (28, 132, 176)         # cool scanline accent
 CURSOR = (86, 176, 214)
 
-# Slightly larger terminal + fewer “dead pixels” at the bottom.
-W, H = 860, 560
+# Slightly larger terminal so all lines fit cleanly without bottom cut.
+W, H = 860, 620
 PAD_X = 28
 PAD_Y = 44
 LH = 16
@@ -32,58 +32,71 @@ FS = 13
 mask = []
 
 name = [
-    "   root@fsociety:~$",
-    "   Shivansh Sahajpal",
-    "   (ready to execute)",
+    "┌──(shivansh㉿kali)-[~]",
+    "└─$ echo \"Welcome to fsociety, Shivansh Sahajpal.\"",
+    "Welcome to fsociety, Shivansh Sahajpal.",
     "",
 ]
 
 boot = [
-    "root@fsociety:~$ whoami",
-    "shivansh sahajpal",
+    "┌──(shivansh㉿kali)-[~/Documents/my_projects]",
+    "└─$ sudo apt update",
+    "[sudo] password for shivansh: [REDACTED]",
+    "Get:1 .../kali-rolling/main amd64 Packages",
+    "Get:2 .../kali-rolling/non-free amd64 Packages",
+    "Fetched 77.5 MB in 17s (4,592 kB/s)",
+    "Reading package lists... Done",
     "",
-    "root@fsociety:~$ sudo apt update",
-    "Get:1 archive update ................. OK",
-    "Get:2 package index ................. OK",
+    "┌──(shivansh㉿kali)-[~/Documents/my_projects]",
+    "└─$ sudo apt install -y nmap burpsuite sqlmap",
+    "Reading package lists... Done",
+    "Building dependency tree... Done",
+    "The following NEW packages will be installed:",
+    "  burpsuite nmap sqlmap",
+    "Processing triggers for kali-menu (2025.4.3)",
+    "Setting up toolchain... [OK]",
     "",
-    "root@fsociety:~$ sudo apt install -y nmap burpsuite sqlmap",
-    "Installing nmap ............ [OK]",
-    "Installing burpsuite ...... [OK]",
-    "Installing sqlmap .......... [OK]",
-    "",
-    "root@fsociety:~$ nmap -sC -sV -oN scan.txt 192.168.1.10",
-    "Starting Nmap .......................... OK",
-    "Host up: 192.168.1.10 (ports: 22,80,443)",
-    "",
-    "root@fsociety:~$ ready && echo \"tools online\"",
-    "tools online",
+    "┌──(shivansh㉿kali)-[~/Documents/my_projects]",
+    "└─$ nmap -sC -sV -v 12.10.8.64/20",
+    "Starting Nmap 7.99 ( https://nmap.org )",
+    "Initiating ARP Ping Scan at 14:29",
+    "Scanning 4095 hosts [1 port/host]",
+    "Completed ARP Ping Scan at 14:31 ...",
+    "Discovered open port 22/tcp on 12.10.0.5",
+    "Discovered open port 445/tcp on 12.10.0.11",
+    "Nmap done: 4095 hosts scanned in 169.12s",
 ]
 
 
 footer = [
     "",
-    "root@fsociety:~$ ls -la",
-    "tools  notes  scans  tmp  screenshots",
+    "└─$ ready",
+    "Ready to go now..",
 ]
+
+# If lines exceed canvas, bottom can appear “cut”.
+# Keep W/H and PAD/LH in sync with number of lines.
+# (We’ll regenerate and check frames.)
 
 lines = []
 for s in boot:
     # Colorize prompts/commands vs output for a more “real terminal” feel.
-    if s.startswith("root@fsociety:~$"):
+    if s.startswith("┌──") or s.startswith("└─$"):
         lines.append((s, CYAN))
-    elif s.startswith("Installing") or s.startswith("Starting") or s.startswith("Get:"):
+    elif s.startswith("Get:") or s.startswith("Reading") or s.startswith("Building"):
         lines.append((s, DIM))
     else:
         lines.append((s, ICE))
 
 # name + footer kept for context
 for s in name:
-    lines.append((s, CYAN))
-for s in footer:
-    if s.startswith("root@"):
+    if s.startswith("┌──") or s.startswith("└─$"):
         lines.append((s, CYAN))
-    elif s == "shivanshsahajpal22-dev":
+    else:
         lines.append((s, ICE))
+for s in footer:
+    if s.startswith("└─$"):
+        lines.append((s, CYAN))
     else:
         lines.append((s, ICE))
 
