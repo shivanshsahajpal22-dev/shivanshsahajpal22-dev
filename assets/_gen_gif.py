@@ -15,17 +15,18 @@ BORDER = (26, 40, 54)
 DIM = (74, 102, 118)
 CYAN = (86, 176, 214)       # cooler ice cyan
 ICE = (168, 214, 232)       # cool body text
-MASK = (120, 188, 255)      # cool fsociety mask cyan
+MASK = (120, 188, 255)      # kept (unused now)
 RED = (70, 28, 42)          # dark window buttons, not candy
 YELLOW = (42, 78, 108)      # cool steel, not warm
 OK = (28, 132, 176)         # cool scanline accent
 CURSOR = (86, 176, 214)
 
-W, H = 820, 578
-PAD_X = 24
+# Slightly larger terminal + fewer “dead pixels” at the bottom.
+W, H = 860, 560
+PAD_X = 28
 PAD_Y = 44
-LH = 15
-FS = 12
+LH = 16
+FS = 13
 
 # mask removed: terminal GIF is now clean identity + boot/apt sequence only.
 mask = []
@@ -121,7 +122,7 @@ def main():
 
     blank, _ = new_frame()
     frames.append(blank)
-    durations.append(220)
+    durations.append(320)  # slightly slower “boot” start
 
     for n in range(1, len(lines) + 1):
         img, draw = new_frame()
@@ -129,9 +130,9 @@ def main():
         last = lines[n - 1][0]
         tw = draw.textlength(last, font=font)
         cy = PAD_Y + (n - 1) * LH
-        draw.rectangle((PAD_X + int(tw) + 2, cy + 1, PAD_X + int(tw) + 8, cy + FS), fill=CURSOR)
+        draw.rectangle((PAD_X + int(tw) + 2, cy + 1, PAD_X + int(tw) + 10, cy + FS), fill=CURSOR)
         frames.append(img)
-        durations.append(60)
+        durations.append(85)  # slower, more life-like
 
     on = frames[-1]
     off, draw = new_frame()
@@ -145,6 +146,8 @@ def main():
     palette_src = frames[-2].quantize(colors=24, method=Image.Quantize.MEDIANCUT)
     qframes = [f.quantize(palette=palette_src, dither=Image.Dither.NONE) for f in frames]
 
+    # Trim bottom whitespace by ensuring text doesn't exceed the intended area.
+    # (We rely on smaller H + tuned PAD/LH instead of heavy image-cropping.)
     out = Path(__file__).with_name("github-ascii.gif")
     qframes[0].save(
         out,
