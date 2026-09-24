@@ -38,33 +38,44 @@ name = [
 ]
 
 boot = [
-    "[*] hello, friend.",
-    "[*] loading operator profile .............. OK",
-    "[*] initializing toolchain ............... OK",
-    "[*] sudo apt update ........................ OK",
-    "[*] installing: nmap burpsuite sqlmap .... OK",
-    "[*] ready to go now..",
+    "root@fsociety:~$ whoami",
+    "shivansh sahajpal",
     "",
+    "root@fsociety:~$ sudo apt update",
+    "Get:1 archive update ................. OK",
+    "Get:2 package index ................. OK",
+    "",
+    "root@fsociety:~$ sudo apt install -y nmap burpsuite sqlmap",
+    "Installing nmap ............ [OK]",
+    "Installing burpsuite ...... [OK]",
+    "Installing sqlmap .......... [OK]",
+    "",
+    "root@fsociety:~$ nmap -sC -sV -oN scan.txt 192.168.1.10",
+    "Starting Nmap .......................... OK",
+    "Host up: 192.168.1.10 (ports: 22,80,443)",
+    "",
+    "root@fsociety:~$ ready && echo \"tools online\"",
+    "tools online",
 ]
 
 
 footer = [
     "",
-    "  [ PROFESSIONAL HACKER ]   [ TOOL DESIGNER ]",
-    "  building offensive tooling  |  write-ups: rare",
-    "",
-    "root@fsociety:~$ whoami",
-    "shivanshsahajpal22-dev",
+    "root@fsociety:~$ ls -la",
+    "tools  notes  scans  tmp  screenshots",
 ]
 
 lines = []
 for s in boot:
-    if s.startswith("[*]"):
+    # Colorize prompts/commands vs output for a more “real terminal” feel.
+    if s.startswith("root@fsociety:~$"):
+        lines.append((s, CYAN))
+    elif s.startswith("Installing") or s.startswith("Starting") or s.startswith("Get:"):
         lines.append((s, DIM))
     else:
-        lines.append((s, CYAN))
-# mask removed
-# (intentionally no mask lines added)
+        lines.append((s, ICE))
+
+# name + footer kept for context
 for s in name:
     lines.append((s, CYAN))
 for s in footer:
